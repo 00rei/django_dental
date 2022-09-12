@@ -1,0 +1,35 @@
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.home, name='home'),
+    path('client', views.admin_client, name='client'),
+    path('client-edit', views.admin_client_edit, name='client-edit'),
+    path('client-reception', views.admin_client_reception, name='client-reception'),
+    path('clients', views.admin_clients, name='clients'),
+    # path('contacts', views.admin_contacts, name='contacts-moderation'),
+    path('discounts', views.admin_discount, name='discount-moderation'),
+    path('feedback', views.admin_feedback, name='feedback-moderation'),
+    path('group-of-price-edit', views.admin_group_of_price_edit, name='group-of-price-edit'),
+    path('photo', views.admin_photo, name='photo'),
+    path('price', views.admin_price, name='price-moderation'),
+    path('price-edit', views.admin_price_edit, name='price-edit'),
+    path('reg-request', views.admin_reg_request, name='reg-request'),
+    # path('report-clients', views.admin_report_clients, name='report-clients'),
+    path('report-services', views.admin_report_services, name='report-services'),
+    path('review-approve', views.admin_review_approve, name='review-approve'),
+    path('review-reject', views.admin_review_reject, name='review-reject'),
+    path('review-delete', views.admin_review_delete, name='review-delete'),
+    path('request-processed', views.admin_request_processed, name='request-processed'),
+    path('create-discount', views.admin_discount_create, name='create-discount'),
+    path('delete-discount', views.admin_discount_delete, name='delete-discount'),
+    path('delete-group-service', views.admin_group_of_service_delete, name='delete-group-service'),
+    path('move-group-service', views.admin_group_of_service_move, name='move-group-service'),
+    path('delete-service', views.admin_service_delete, name='delete-service'),
+    path('delete-photo', views.admin_photo_delete, name='delete-photo'),
+    path('delete-reception', views.admin_reception_delete, name='delete-reception'),
+    # path('post', views.post, name='post'),
+    path('logout', views.admin_logout, name='logout'),
+    path('login', views.admin_login, name='login'),
+
+]
