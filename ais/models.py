@@ -32,40 +32,6 @@ class Service(models.Model):
     def __str__(self):
         return str(self.id)
 
-#
-# class TypeOfMaterial(models.Model):
-#     """Типы материалов"""
-#     name = models.CharField(max_length=200, verbose_name='Наименование')
-#
-#     def __str__(self):
-#         return str(self.id)
-#
-#
-# class Material(models.Model):
-#     """Материалы"""
-#     type = models.ForeignKey(TypeOfMaterial, on_delete=models.CASCADE, verbose_name='Тип материала')
-#     name = models.CharField(max_length=200, verbose_name='Наименование')
-#
-#     def __str__(self):
-#         return str(self.id)
-#
-#
-# class TypeOfTool(models.Model):
-#     """Типы инструментов"""
-#     name = models.CharField(max_length=200, verbose_name='Наименование')
-#
-#     def __str__(self):
-#         return str(self.id)
-#
-#
-# class Tool(models.Model):
-#     """Инструменты"""
-#     type = models.ForeignKey(TypeOfTool, on_delete=models.CASCADE, verbose_name='Тип инструмента')
-#     name = models.CharField(max_length=200, verbose_name='Наименование')
-#
-#     def __str__(self):
-#         return str(self.id)
-
 
 class RequestService(models.Model):
     """Заявки на прием"""
@@ -125,34 +91,6 @@ class Promotion(models.Model):
         return str(self.id)
 
 
-# class InvoiceMaterial(models.Model):
-#     """Поступление / списание материалов материалов"""
-#     TYPE_CONSUMPTION = '0'
-#     TYPE_RECEIPT = '1'
-#
-#     user = models.ForeignKey(UserAIS, on_delete=models.CASCADE)
-#     material = models.ForeignKey(Material, on_delete=models.CASCADE)
-#     count = models.IntegerField(verbose_name='Количество')
-#     type = models.CharField(max_length=1, verbose_name='Тип операции')
-#     date = models.DateField(verbose_name='Дата')
-#
-#     def __str__(self):
-#         return str(self.id)
-#
-# #
-# class InvoiceTool(models.Model):
-#     """Поступление / списание инструментов"""
-#     TYPE_CONSUMPTION = '0'
-#     TYPE_RECEIPT = '1'
-#
-#     user = models.ForeignKey(UserAIS, on_delete=models.CASCADE)
-#     tool = models.ForeignKey(Tool, on_delete=models.CASCADE)
-#     count = models.IntegerField(verbose_name='Количество')
-#     type = models.CharField(max_length=1, verbose_name='Тип операции')
-#     date = models.DateField(verbose_name='Дата')
-#
-#     def __str__(self):
-#         return str(self.id)
 
 
 class CustomerReception(models.Model):
@@ -165,16 +103,6 @@ class CustomerReception(models.Model):
     def __str__(self):
         return str(self.id)
 
-#
-# class UsedMaterial(models.Model):
-#     """Использованные материалы при приеме"""
-#     reception = models.ForeignKey(CustomerReception, on_delete=models.CASCADE, verbose_name='Код приема')
-#     material_invoice = models.ForeignKey(InvoiceMaterial, on_delete=models.CASCADE,
-#                                          verbose_name='Код расхода материала')
-#
-#     def __str__(self):
-#         return str(self.id)
-
 
 class ServicesProvided(models.Model):
     """Оказанные услуги при приеме"""
@@ -185,12 +113,3 @@ class ServicesProvided(models.Model):
     def __str__(self):
         return str(self.id)
 
-
-# class Contacts(models.Model):
-#     """Контакты"""
-#     city = models.CharField(max_length=30, verbose_name='Город')
-#     address = models.CharField(max_length=100, verbose_name='Улица - Дом')
-#     phone_one = models.CharField(max_length=12, verbose_name='Телефон 1')
-#     phone_two = models.CharField(max_length=12, verbose_name='Телефон 2')
-#     schedule_days = models.CharField(max_length=20, verbose_name='График работы - дни')
-#     schedule_hours = models.CharField(max_length=20, verbose_name='График работы - часы')
